@@ -1,4 +1,41 @@
-body {
+/*Selector ID*/
+#biografia {
+    color: black;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 8px;
+    text-align: justify; /* Justificar el texto */
+}
+#datos {
+    color: black;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 8px;
+}
+#virtudes {
+    color: black;
+    padding-right: 28px;
+    padding-left: 28px;
+    padding-bottom: 8px;
+    text-align: justify;
+}
+#frases {
+    color: black;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: italic;
+}
+#galeriadepersonajes {
+    color: black;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+/* Estilos generales para el cuerpo, encabezado, texto y secciones */
+  body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color:rgb(139, 95, 95);
 }
@@ -8,71 +45,67 @@ header {
     text-align: center;
     padding: 2rem 1rem;
     font-size: 2rem;
-  }
-/*Selector de etiqueta*/
+}
+/* Estilos generales para el texto y las secciones principales */
+strong {
+    color:#000000;
+}
 h1 {
     color: bisque;
-    text-shadow: #000000 0.1em 0.1em 0.2em;
+    text-shadow: #000000 0.1em 0.1em 0.1em;
 }
 h2 {
     color:rgb(105, 52, 52);
     padding-top: 25px;
     padding-left: 25px;
+    font-size: 2rem; 
 }
-/*Selector de clase*/
+p {
+    line-height: 1.5;
+}
+ul {
+    line-height: 1.5;
+    list-style-type: disc;
+    text-align: justify;
+}
+/* Estilos para la barra de navegación */
 .oscuro {
     background-color: rgb(105, 52, 52);
     color: white;
-    background-size: cover;
-    background-position: center;
     text-align: center;
     text-shadow: #000000 0.1em 0.1em 0.2em;
-    font-size: 1.8rem;
+    font-size: 2.3rem;
+    padding: 1rem 0; /* padding para que no se vea el texto pegado a los bordes */
 }
 nav a {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 0 18px;
     text-decoration: none;
     color: #fff8ec;
 }
-/*Selector ID*/
-#biografia {
-    background-color: rgb(255, 236, 220) ;
-    color: black;
-    padding-left: 28px;
-    padding-right: 28px;
-    padding-bottom: 8px;
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
-#datos {
-    background-color: rgb(255, 236, 220);
-    color: black;
-    padding-right: 28px;
-    padding-bottom: 8px;
+th, td {
+    border: 1px solid black;
+    padding: 10px;
 }
-#virtudes {
-    background-color: rgb(255, 236, 220);
-    color: black;
-    padding-right: 28px;
-    padding-bottom: 8px;
+th {
+    background-color: rgb(105, 52, 52);
+    color: #fff8ec;
 }
-#frases {
-    background-color:rgb(255, 236, 220);
-    color: black;
-    padding-right: 28px;
-    padding-bottom: 8px;
-}
-#galeriadepersonajes {
-    background-color:rgb(255, 236, 220);
-    color: black;
-    padding-left: 28px;
-}
+/* Estilos para el footer */
 footer {
     background-color: rgb(105, 52, 52);
     color: #fff8ec;
     text-align: center;
     padding: 1rem;
-  }
-  footer a {
+}
+footer a {
     color: #fff8ec;
     text-decoration: none;
     font-weight: bold;
@@ -80,46 +113,26 @@ footer {
     margin: 0 0.5rem; 
     font-size: 1.8rem; 
     display: inline-block; 
-  }
-  
-  footer a:hover {
+}
+footer a:hover {
     color: rgb(196, 108, 108);
-  }
-  #galeria .contenedor-galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-  .tarjeta-obra {
-    background-color: #fff8ec;
-    border: 1px solid #d8c3a5;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .tarjeta-obra:hover {
-    transform: scale(1.02);
-  }
-  
-  .tarjeta-obra img {
-    width: 100%;
+}
+/* Estilos para las imágenes */
+img {
+    max-width: 100%;
     height: auto;
-  }
-  
-  .info-obra {
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 5px 6px 8px rgb(105, 52, 52);
+    border: 4px solid rgb(105, 52, 52);
+    border-radius: 8px;
+    margin-left: 12rem;
+}
+/* Estilos para el article */
+article  {
+    background-color: rgb(255, 236, 220);
     padding: 1rem;
-  }
-  
-  .info-obra h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
-    color: #8b5e3c;
-  }
-  
-  .info-obra p {
-    margin: 0.2rem 0;
-    font-size: 0.9rem;
-  }
-  
+    border-radius: 7px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
