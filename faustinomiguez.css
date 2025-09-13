@@ -1,37 +1,73 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:rgb(139, 95, 95);
+}
 header {
-    background-image: url("fondo\ rosa.jpg");
+    background-image: url("fondo-marron.jpg");
     background-size: cover;
-    background-position: center;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+    font-size: 2rem;
   }
 /*Selector de etiqueta*/
 h1 {
-    color:rgb(80, 6, 6);
+    color: bisque;
+    text-shadow: #000000 0.1em 0.1em 0.2em;
 }
 h2 {
-    color:rgb(80, 6, 6);
+    color:rgb(105, 52, 52);
+    padding-top: 25px;
+    padding-left: 25px;
 }
 /*Selector de clase*/
 .oscuro {
-    background-color: rgb(196, 108, 108);
+    background-color: rgb(105, 52, 52);
     color: white;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+    font-size: 1.8rem;
+}
+nav a {
+    margin-left: 25px;
+    margin-right: 25px;
+    text-decoration: none;
+    color: #fff8ec;
 }
 /*Selector ID*/
 #biografia {
-    background-color:rgb(218, 172, 172);
+    background-color: rgb(255, 236, 220) ;
     color: black;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 8px;
+}
+#datos {
+    background-color: rgb(255, 236, 220);
+    color: black;
+    padding-right: 28px;
+    padding-bottom: 8px;
+}
+#virtudes {
+    background-color: rgb(255, 236, 220);
+    color: black;
+    padding-right: 28px;
+    padding-bottom: 8px;
 }
 #frases {
-    background-color:rgb(218, 172, 172);
+    background-color:rgb(255, 236, 220);
     color: black;
+    padding-right: 28px;
+    padding-bottom: 8px;
 }
 #galeriadepersonajes {
-    background-color:rgb(218, 172, 172);
+    background-color:rgb(255, 236, 220);
     color: black;
+    padding-left: 28px;
 }
 footer {
-    background-color: rgb(196, 108, 108);
+    background-color: rgb(105, 52, 52);
     color: #fff8ec;
     text-align: center;
     padding: 1rem;
@@ -47,7 +83,7 @@ footer {
   }
   
   footer a:hover {
-    color: rgb(80, 6, 6);
+    color: rgb(196, 108, 108);
   }
   #galeria .contenedor-galeria {
     display: grid;
