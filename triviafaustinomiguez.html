@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Triva de Faustino Míguez</title>
+    <style>
+    /*ESTILOS PARA EL MODAL*/
+    .modal {
+        display: none; /* oculto hasta abrir */
+        position: fixed;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+    .modal-contenido {
+        background: white;
+        margin: 5% auto;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    .cerrar { float: right; cursor: pointer; font-size: 24px; }
+    .correcta { color: green; }
+    .incorrecta { color: red; }
+    #resultado { margin-top: 1em; }
+    button {
+    padding: 12px;
+    background-color:rgb(160, 89, 89);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    }
+    button:hover {
+    transform: scale(1.05);
+    background-color: rgb(105, 52, 52);
+    color: rgb(255, 231, 231);
+    } 
+
+    /* Estilos generales para el cuerpo, encabezado, texto y secciones */
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:rgb(139, 95, 95);
+}
+header {
+    background-image: url("fondo-marron.jpg");
+    background-size: cover;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+}
+/* Estilos generales para el texto y las secciones principales */
+strong {
+    color:#000000;
+}
+h1 {
+    color: bisque;
+    text-shadow: #000000 0.1em 0.1em 0.1em;
+}
+h3 {
+    color:rgb(75, 34, 34);
+    padding-top: 25px;
+    padding-left: 25px;
+    font-size: 2rem; 
+}
+h2 {
+    color:rgb(105, 52, 52);
+    padding-top: 25px;
+    padding-left: 25px;
+    font-size: 4rem; 
+}
+p {
+    line-height: 1.5;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+ul {
+    line-height: 1.5;
+    list-style-type: disc;
+    text-align: justify;
+    padding-right: 2rem;
+}
+/* Estilos para la barra de navegación */
+.oscuro {
+    background-color: rgb(105, 52, 52);
+    color: white;
+    text-align: center;
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+    font-size: 2rem;
+    padding: 1rem 0; /* padding para que no se vea el texto pegado a los bordes */
+}
+nav a {
+    margin: 0 50px;
+    text-decoration: none;
+    color: #fff8ec;
+    background-size:cover;
+    transition: transform 0.2s ease, color 0.3s ease;
+
+}
+nav a:hover {
+    transform: scale(1.05);
+    color: rgb(219, 116, 116);
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+
+    } 
+/* Estilos para el footer */
+footer {
+    background-color: rgb(105, 52, 52);
+    color: #fff8ec;
+    text-align: center;
+    padding: 1rem;
+}
+footer a {
+    color: #fff8ec;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem; 
+    font-size: 1.8rem; 
+    display: inline-block; 
+}
+footer a:hover {
+    color: rgb(196, 108, 108); 
+}
+
+/* Estilos para el article */
+article  {
+    background-color: rgb(255, 236, 220);
+    padding: 1rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+    </style> 
+    
+</head>
+<body>
+    <header>
+        <h1>Faustino Míguez</h1>
+    </header>
+    <nav class="oscuro">
+        <a href="index.html">Inicio</a>
+        <a href="triviafaustinomiguez.html">Trivia</a>
+    </nav>
+    <main>
+    <!--Seccion para jugar a la trivia-->
+    <section id="jugar-trivia">
+        <article>
+        <h3>¿Te animas a poner a prueba tus conocimientos?</h3>
+        <button id="abrirTrivia">Comenzar Trivia</button>
+        </article>
+    </section>
+    </main>
+    <footer class="oscuro">
+        <a><i class="bi bi-instagram"></i></a>
+        <a><i class="bi bi-twitter"></i></a>
+        </ul>
+    </footer>
+    <!-- MODAL -->
+    <div id="modalTrivia" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <!-- Aquí irá el formulario y resultados -->
+            <h2>Trivia sobre Faustino Míguez</h2>
+            <form id="formTrivia">
+                <p><strong>1. ¿Dónde nació San Faustino Míguez?</strong></p>
+                <label><input type="radio" name="p1" value="Xamirás"> Xamirás</label><br>
+                <label><input type="radio" name="p1" value="Peralta de la Sal"> Peralta de la Sal</label><br>
+                <label><input type="radio" name="p1" value="Getafe"> Getafe</label><br><br>
+                <p><strong>2. ¿En qué año nació?</strong></p>
+                <label><input type="radio" name="p2" value="1556"> 1831</label><br>
+                <label><input type="radio" name="p2" value="1840"> 1840</label><br>
+                <label><input type="radio" name="p2" value="1828"> 1828</label><br><br>
+                <p><strong>3. ¿Cuándo fue su Canonización?</strong></p>
+                <label><input type="radio" name="p3" value="3 de septiembre de 2018"> 3 de septiembre de 2018</label><br>
+                <label><input type="radio" name="p3" value="16 de enero de 2016"> 16 de enero de 2016</label><br>
+                <label><input type="radio" name="p3" value="15 de octubre de 2017"> 15 de octubre de 2017</label><br><br>
+                <p><strong>4. ¿Qué frase es suya?</strong></p>
+                <label><input type="radio" name="p4" value="«Cada hombre tiene en sí mismo la plenitud del bien y la plenitud del mal»"> «Cada hombre tiene en sí mismo la plenitud del bien y la plenitud del mal» </label><br>
+                <label><input type="radio" name="p4" value="«Dejemos obrar a Dios que para mejor será»"> «Dejemos obrar a Dios que para mejor será» </label><br>
+                <label><input type="radio" name="p4" value="«Vale más un buen ejemplo que un buen sermón»"> «Vale más un buen ejemplo que un buen sermón» </label><br><br>
+                <p><strong>5. ¿Qué día se celebra su festividad?</strong></p>
+                <label><input type="radio" name="p5" value="25 de agosto"> 22 de noviembre</label><br>
+                <label><input type="radio" name="p5" value="12 de octubre"> 12 de octubre</label><br>
+                <label><input type="radio" name="p5" value="8 de marzo"> 8 de marzo </label><br><br>
+                <button type="submit">Enviar respuestas</button>
+            </form>
+            <div id="resultado"></div>
+        </div>
+    </div> 
+    <!-- SCRIPT básico para abrir/cerrar el MODAL-->
+    <script>
+    const modal = document.getElementById("modalTrivia");
+    const btnAbrir = document.getElementById("abrirTrivia");
+    const btnCerrar = document.querySelector(".cerrar");
+    btnAbrir.onclick = () => { modal.style.display = "block"; };
+    btnCerrar.onclick = () => { modal.style.display = "none"; };
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+    document.getElementById("formTrivia").addEventListener("submit", function(e) {
+        e.preventDefault();
+        // Variable para puntaje
+        let puntaje = 0;
+        let salida = "";
+        // Capturamos la respuesta de la PREGUNTA 1
+        let r1 = document.querySelector('input[name="p1"]:checked');
+        let r2 = document.querySelector('input[name="p2"]:checked');
+        let r3 = document.querySelector('input[name="p3"]:checked');
+        let r4 = document.querySelector('input[name="p4"]:checked');
+        let r5 = document.querySelector('input[name="p5"]:checked');
+
+        // Validamos
+        if (r1) {
+            if (r1.value === "Xamirás") {
+                puntaje++;
+                salida += "<p class='correcta'>1. Correcta</p>";
+            } else {
+               salida += "<p class='incorrecta'>1. Incorrecta. Correcta: Xamirás</p>";}
+            } else {
+                salida += "<p class='incorrecta'>1. No respondida. Correcta: Xamirás</p>";
+            }
+        if (r2) {
+            if (r2.value === "1831") {
+                puntaje++;
+                salida += "<p class='correcta'>2. Correcta</p>";
+            } else {
+               salida += "<p class='incorrecta'>2. Incorrecta. Correcta: 1831</p>";}
+            } else {
+                salida += "<p class='incorrecta'>2. No respondida. Correcta: 1831</p>";
+            }        
+        if (r3) {
+            if (r3.value === "15 de octubre de 2017") {
+                puntaje++;
+                salida += "<p class='correcta'>3. Correcta</p>";
+            } else {
+               salida += "<p class='incorrecta'>3. Incorrecta. Correcta: 15 de octubre de 2017</p>";}
+            } else {
+                salida += "<p class='incorrecta'>3. No respondida. Correcta: 15 de octubre de 2017</p>";
+            } 
+        if (r4) {
+            if (r4.value === "«Dejemos obrar a Dios que para mejor será»") {
+                puntaje++;
+                salida += "<p class='correcta'>4. Correcta</p>";
+            } else {
+               salida += "<p class='incorrecta'>4. Incorrecta. Correcta: «Dejemos obrar a Dios que para mejor será»</p>";}
+            } else {
+                salida += "<p class='incorrecta'>4. No respondida. Correcta: «Dejemos obrar a Dios que para mejor será»</p>";
+            }
+        if (r5) {
+            if (r5.value === "8 de marzo") {
+                puntaje++;
+                salida += "<p class='correcta'>5. Correcta</p>";
+            } else {
+               salida += "<p class='incorrecta'>5. Incorrecta. Correcta: 8 de marzo</p>";}
+            } else {
+                salida += "<p class='incorrecta'>5. No respondida. Correcta: 8 de marzo</p>";
+            } 
+            // Mostramos el resultado dentro del modal, debajo del formulario
+            salida += `<h4>Puntaje final: ${puntaje} de 5</h4>`;
+            if (puntaje === 5) salida += " ¡Excelente trabajo!";
+            else if (puntaje >= 3) salida += " Muy bien, conoces bastante sobre Faustino Míguez.";
+            else salida += " Puedes repasar la página para aprender más."; 
+            document.getElementById("resultado").innerHTML = salida;
+            }); 
+    </script> 
+</body>
+</html>
