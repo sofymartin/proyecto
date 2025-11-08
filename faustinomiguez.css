@@ -81,10 +81,17 @@ ul {
     padding: 1rem 0; /* padding para que no se vea el texto pegado a los bordes */
 }
 nav a {
-    margin: 0 18px;
+    margin: 0 50px;
     text-decoration: none;
     color: #fff8ec;
+    background-size:cover;
+    transition: transform 0.2s ease, color 0.3s ease;
 }
+nav a:hover {
+    transform: scale(1.05);
+    color: rgb(219, 116, 116);
+    text-shadow: #000000 0.1em 0.1em 0.2em;
+    } 
 /* Estilos para la tabla */
 table {
     border-collapse: collapse;
